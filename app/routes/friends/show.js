@@ -7,6 +7,15 @@ export default Ember.Route.extend({
 
   model: function(params) {
     return this.store.find('friend', params.friend_id);
+  },
+
+  actions: {
+    delete: function(friend) {
+      var _this = this;
+      friend.destroyRecord().then(function() {
+        _this.transitionTo('friends.index');
+      });
+    }
   }
 
 });
