@@ -17,6 +17,15 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// By importing things here, they will be included in `vendor.css`.
 app.import('bower_components/picnic/releases/v2.min.css')
+app.import('vendor/fontello/fontello.css');
+
+// These files will be accessible at the URI `/font`
+app.import('vendor/fontello/font/fontello.ttf',  { destDir: 'font' });
+app.import('vendor/fontello/font/fontello.eot',  { destDir: 'font' });
+app.import('vendor/fontello/font/fontello.svg',  { destDir: 'font' });
+app.import('vendor/fontello/font/fontello.woff', { destDir: 'font' });
+
 
 module.exports = app.toTree();
