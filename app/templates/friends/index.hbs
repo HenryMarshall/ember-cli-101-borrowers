@@ -1,0 +1,14 @@
+<h1>Friends Index</h1>
+
+{{!-- The context here is the controller. --}}
+
+<p>You have {{model.length}} friends</p>
+
+<ul>
+  {{#each friend in model}}
+    <li>{{friend.id}}: {{friend.firstName}} {{friend.lastName}}</li>
+  {{/each}}
+</ul>
+
+{{!-- If the route returned a singular object, it is the implicit this. We would
+      then refer to simply its properties ( e.g., {{firstName}} ). --}}
