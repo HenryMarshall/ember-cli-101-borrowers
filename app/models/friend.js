@@ -1,4 +1,5 @@
 // Import the default value from 'ember-data' into the variable `DS`
+import Ember from 'ember';
 import DS from 'ember-data';
 
 // Define the default export for _this_ model, which will be a subclass of
