@@ -1,12 +1,10 @@
 {{link-to 'Friends' 'friends.index'}}
-{{link-to 'Edit' 'friends.edit' model}}
-<a href="#" {{action "delete" model}}>Delete</a>
 
-<ul>
+<div class="friend-profile">
+  <p>{{model.firstName}} {{model.lastName}}</p>
+  <p>{{model.email}}</p>
+  <p>{{model.twitter}}</p>
+  {{link-to 'Edit Info' 'friends.edit' model}}
+  <a href="#" {{action "delete" model}}>Delete</a>
   
-  <li>First Name: {{model.firstName}}</li>
-  <li>Last Name: {{model.lastName}}</li>
-  <li>Email: {{model.email}}</li>
-  <li>Twitter: {{model.twitter}}</li>
-
-</ul>
+</div>
