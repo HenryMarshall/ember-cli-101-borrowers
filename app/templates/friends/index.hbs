@@ -1,0 +1,29 @@
+<h1>Friends Index</h1>
+
+{{!-- The context here is the controller. --}}
+
+{{link-to 'New Friend' 'friends.new'}}
+
+<p>You have {{model.length}} friends</p>
+
+<ul>
+  {{#each friend in model}}
+    <li>
+      {{friend.id}}: 
+      {{!-- You can alternatively pass a friend's `id` as she second arg to 
+            `link-to` (e.g., `{{#link-to 'friends.show' friend.id}}`). This will
+            cause the model to fire (it won't if you pass the instance 
+            directly). --}}
+      {{#link-to 'friends.show' friend}}
+        {{!-- `friend.fullName` is a computed value from the friend model. --}}
+        {{friend.fullName}}
+      {{/link-to}}
+
+      {{!-- We put this action in the  --}}
+      <a href="#" {{action "delete" friend}}>Delete</a>
+    </li>
+  {{/each}}
+</ul>
+
+{{!-- If the route returned a singular object, it is the implicit this. We would
+      then refer to simply its properties ( e.g., {{firstName}} ). --}}

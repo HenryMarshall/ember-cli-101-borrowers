@@ -1,0 +1,43 @@
+{{!-- Ember CLI demands that partials are named with the convention `-form.hbs`.
+      This is contrary to what the ember docs suggest (`_form.hbs`) --}}
+
+{{!-- This action could alternatively been specified as a submit button. --}}
+<form {{action "save" on="submit"}}>
+
+  <h2>{{errorMessage}}</h2>
+  
+  <p>
+    <label>
+      First Name:
+      {{input value=model.firstName}}
+    </label>
+  </p>
+  
+  <p>
+    <label>
+      Last Name:
+      {{input value=model.lastName}}
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Email:
+      {{input value=model.email}}
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Twitter:
+      {{input value=model.twitter}}
+    </label>
+  </p>
+
+  {{!-- Other input helpers exist like:
+            {{input type='checkbox'}}
+         --}}
+
+  <input type="submit" value="Save"/>
+  <button {{action "cancel"}}>Cancel</button>
+</form>
