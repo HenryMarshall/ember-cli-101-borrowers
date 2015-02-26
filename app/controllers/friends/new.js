@@ -40,6 +40,8 @@ export default Ember.Controller.extend({
     },
     cancel: function() {
 
+      // `transitionToRoute()` functions similarly to {{link-to}}, but within a
+      // controller.
       this.transitionToRoute('friends');
       return false;
 
