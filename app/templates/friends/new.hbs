@@ -1,1 +1,14 @@
-{{outlet}}
+<h1>Add a new friend</h1>
+
+<div>
+  <h3>Live Friend Details</h3>
+  <p>First Name: {{model.firstName}}</p>
+  <p>Last Name: {{model.lastName}}</p>
+</div>
+
+<hr>
+
+{{!-- Partials are rendered in the context of the current template. This lets
+      us reuse this partial on both the `friends/new` and `friends/edit` pages.
+       --}}
+{{partial "friends/form"}}
