@@ -18,5 +18,12 @@ export default Ember.Route.extend({
 
     // Weirdly, I am now struggling to run the above manually with `$E`. I have
     // tried the ApplicationRoute, FriendsRoute and FriendsIndexRoute.
+  },
+
+  actions: {
+    delete: function(friend) {
+      friend.destroyRecord();
+      return false;
+    }
   }
 });
