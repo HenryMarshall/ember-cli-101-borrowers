@@ -6,7 +6,17 @@
 
 <ul>
   {{#each friend in model}}
-    <li>{{friend.id}}: {{friend.firstName}} {{friend.lastName}}</li>
+    <li>
+      {{friend.id}}: 
+      {{!-- You can alternatively pass a friend's `id` as she second arg to 
+            `link-to` (e.g., `{{#link-to 'friends.show' friend.id}}`). This will
+            cause the model to fire (it won't if you pass the instance 
+            directly). --}}
+      {{#link-to 'friends.show' friend}}
+        {{!-- `friend.fullName` is a computed value from the friend model. --}}
+        {{friend.fullName}}
+      {{/link-to}}
+    </li>
   {{/each}}
 </ul>
 
