@@ -1,6 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  // Ember.Computed allows us to create function that are treated as properties.
+  isValid: Ember.computed(
+    'model.email',
+    'model.firstName',
+    'model.lastName',
+    'model.twitter',
+    function() {
+      return !Ember.isEmpty(this.get('model.email')) &&
+             !Ember.isEmpty(this.get('model.firstName')) &&
+             !Ember.isEmpty(this.get('model.lastName')) &&
+             !Ember.isEmpty(this.get('model.twitter'))
+    }
+  ),
   actions: {
     save: function() {
       console.log("+- save action in friends new controller");
