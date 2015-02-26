@@ -18,12 +18,11 @@ export default Ember.Route.extend({
 
     // Weirdly, I am now struggling to run the above manually with `$E`. I have
     // tried the ApplicationRoute, FriendsRoute and FriendsIndexRoute.
-  },
-
-  actions: {
-    delete: function(friend) {
-      friend.destroyRecord();
-      return false;
-    }
   }
+
+  
+  // The delete action has been refactored into the shared (between show and
+  // index) `/app/routes/friends.js`. The event bubbles there after not finding
+  // an action here.
+
 });
