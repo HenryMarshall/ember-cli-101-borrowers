@@ -1,19 +1,36 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  // Ember.Computed allows us to create function that are treated as properties.
-  isValid: Ember.computed(
-    'model.email',
-    'model.firstName',
-    'model.lastName',
-    'model.twitter',
-    function() {
-      return !Ember.isEmpty(this.get('model.email')) &&
-             !Ember.isEmpty(this.get('model.firstName')) &&
-             !Ember.isEmpty(this.get('model.lastName')) &&
-             !Ember.isEmpty(this.get('model.twitter'));
-    }
-  ),
+
+  // // Ember.Computed allows us to create function that are treated as
+  // // properties.
+  
+  // // Ember has idiomatic helpers called `computed property macros` that can
+  // // simplify this into the following code.
+  // isValid: Ember.computed(
+
+  //   'model.email',
+  //   'model.firstName',
+  //   'model.lastName',
+  //   'model.twitter',
+  //   function() {
+  //     return !Ember.isEmpty(this.get('model.email')) &&
+  //            !Ember.isEmpty(this.get('model.firstName')) &&
+  //            !Ember.isEmpty(this.get('model.lastName')) &&
+  //            !Ember.isEmpty(this.get('model.twitter'));
+  //   }
+  // ),
+
+  hasEmail:       Ember.computed.notEmpty('model.email'),
+  hasFirstName:   Ember.computed.notEmpty('model.firstName'),
+  hasLastName:    Ember.computed.notEmpty('model.lastName'),
+  hasTwitter:     Ember.computed.notEmpty('model.twitter'),
+  isValid:        Ember.computed.and(
+                    'hasEmail', 
+                    'hasFirstName', 
+                    'hasLastName', 
+                    'hasTwitter'
+                  ),
 
   // These actions may be better suited to a route. See 
   // `app/routes/articles/new` for a more detailed description.
