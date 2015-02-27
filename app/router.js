@@ -13,7 +13,11 @@ Router.map(function() {
     // namespace `params`.
 
     // If the dynamic path ends in `_id`, the model path is auto-generated.
-    this.route('show', { path: ':friend_id' });
+    this.route('show', { path: ':friend_id' }, function() {
+      this.resource('articles', function() {
+        this.route('new');
+      });
+    });
     this.route('edit', { path: ':friend_id/edit' });
   });
 });

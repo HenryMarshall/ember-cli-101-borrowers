@@ -23,7 +23,11 @@
               will cause the model to fire (it won't if you pass the instance
               directly). --}}
         {{!-- `friend.fullName` is a computed value from the friend model. --}}
-        <td> {{link-to friend.fullName "friends.show" friend}} </td>
+        {{!-- We link to the `articles` route which still returns the 
+              `friends.show` route because of how it is nested in the router.
+              You can still specify `friends.show`, but it won't include the
+              articles. See p 58. --}}
+        <td> {{link-to friend.fullName "articles" friend}} </td>
         <td> {{friend.totalArticles}} </td>
         {{!-- We put this action in routes/friends.js --}}
         <td> <a href="#" {{action "delete" friend}}>X</a> </td>
