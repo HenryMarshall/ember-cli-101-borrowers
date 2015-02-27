@@ -11,10 +11,12 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   // `DS.attr` is the standar way to define attributes with Ember-Data.
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-  email: DS.attr('string'),
-  twitter: DS.attr('string'),
+  firstName:      DS.attr('string'),
+  lastName:       DS.attr('string'),
+  email:          DS.attr('string'),
+  twitter:        DS.attr('string'),
+
+  articles:       DS.hasMany('article'),
 
   // Values to be bound seem to be passed as the first args to `Ember.computed`
   // rather than as args to a chained `.property()` or `.observes()`. Is this a
