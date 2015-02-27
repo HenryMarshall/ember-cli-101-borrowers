@@ -1,0 +1,9 @@
+<form>
+  <h2>{{errorMessage}}</h2>
+  <fieldset>
+    <p>{{input value=model.description placeholder="Description"}}</p>
+    <p>{{input value=model.notes placeholder='Notes'}}</p>
+    <button {{action "save"}} class="primary">Save</button>
+    <button {{action "cancel"}}>Cancel</button>
+  </fieldset>
+</form>

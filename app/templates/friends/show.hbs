@@ -4,8 +4,14 @@
   <p>{{model.firstName}} {{model.lastName}}</p>
   <p>{{model.email}}</p>
   <p>{{model.twitter}}</p>
-  {{link-to 'Edit Info' 'friends.edit' model}}
-  <a href="#" {{action "delete" model}}>Delete</a>  
+  <p>
+    {{!-- We don't need to specify the dynamic segment because we are already
+          within the desired segment. If we were to link to `articles.new` from
+          elsewhere, we would need to provide the `friend`. --}}
+    {{link-to 'Lend Article' 'articles.new'}}
+    {{link-to 'Edit Info' 'friends.edit' model}}
+    <a href="#" {{action "delete" model}}>Delete</a>
+  </p>
 </div>
 
 <div class="articles-container">

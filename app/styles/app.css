@@ -10,3 +10,7 @@ body {
 table {
   width: 100%;
 }
+
+.friend-profile > p > a {
+  margin: 0 15px;
+}
