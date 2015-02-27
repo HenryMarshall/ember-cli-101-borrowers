@@ -5,6 +5,9 @@
   <p>{{model.email}}</p>
   <p>{{model.twitter}}</p>
   {{link-to 'Edit Info' 'friends.edit' model}}
-  <a href="#" {{action "delete" model}}>Delete</a>
-  
+  <a href="#" {{action "delete" model}}>Delete</a>  
+</div>
+
+<div class="articles-container">
+  {{outlet}}
 </div>
