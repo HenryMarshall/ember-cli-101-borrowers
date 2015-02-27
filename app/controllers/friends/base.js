@@ -14,6 +14,9 @@ export default Ember.Controller.extend({
              !Ember.isEmpty(this.get('model.twitter'));
     }
   ),
+
+  // These actions may be better suited to a route. See 
+  // `app/routes/articles/new` for a more detailed description.
   actions: {
     save: function() {
       if (this.get('isValid')) {
