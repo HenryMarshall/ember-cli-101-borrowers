@@ -12,9 +12,12 @@
                   isReloading, and isValid --}}
   {{#if article.isSaving}}
     <p>Saving...</p>
-  {{else}}
-    {{#if article.isDirty}}
-      <button {{action "saveArticle" article}}>Save</button>
-    {{/if}}
+
+  {{!-- This button was deprecated for auto-save 
+            {{else}}
+              {{#if article.isDirty}}
+                <button {{action "saveArticle" article}}>Save</button>
+              {{/if}}
+  --}}
   {{/if}}
 </td>
