@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>Notes</th>
       <th>Borrowed since</th>
       <th></th>
       <th></th>
@@ -12,6 +13,14 @@
   </thead>
 
   <tbody>
+    {{#each model as |article|}}
+      {{!-- Using `save="save"` allows the save event to bubble. --}}
+      {{articles/article-row article=article save="save" articleStates=possibleStates}}
+    {{else}}
+      <tr><td>No articles lent to this friend</td></tr>
+    {{/each}}
+
+    {{!-- The below is the pre-component implementation.
     {{#each article in model}}
       <tr>
         <td>{{article.description}}</td>
@@ -20,5 +29,6 @@
         <td></td>
       </tr>
     {{/each}}
+    --}}
   </tbody>
 </table>
