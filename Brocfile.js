@@ -27,5 +27,6 @@ app.import('vendor/fontello/font/fontello.eot',  { destDir: 'font' });
 app.import('vendor/fontello/font/fontello.svg',  { destDir: 'font' });
 app.import('vendor/fontello/font/fontello.woff', { destDir: 'font' });
 
+app.import('bower_components/moment/moment.js');
 
 module.exports = app.toTree();
