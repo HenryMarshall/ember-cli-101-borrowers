@@ -1,6 +1,6 @@
 <td>{{article.description}}</td>
 <td>{{article.notes}}</td>
-<td>{{article.createdAt}}</td>
+<td>{{formatted-date article.createdAt 'LL'}}</td>
 {{!-- Here we use the  `Ember.Select` view to render an HTML select element and
       bind it to the value of a given property. The `content` value are the 
       available options, the `selection` is what attribute to bind the result
