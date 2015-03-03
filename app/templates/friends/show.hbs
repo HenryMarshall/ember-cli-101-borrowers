@@ -1,17 +1,23 @@
 {{link-to 'Friends' 'friends.index'}}
 
-<div class="friend-profile">
-  <p>{{model.firstName}} {{model.lastName}}</p>
-  <p>{{model.email}}</p>
-  <p>{{model.twitter}}</p>
-  <p>
-    {{!-- We don't need to specify the dynamic segment because we are already
-          within the desired segment. If we were to link to `articles.new` from
-          elsewhere, we would need to provide the `friend`. --}}
-    {{link-to 'Lend Article' 'articles.new'}}
-    {{link-to 'Edit Info' 'friends.edit' model}}
-    <a href="#" {{action "delete" model}}>Delete</a>
-  </p>
+<div class="friend-profile row">
+  <div class="friend-info full">
+    {{fill-murray width=300 height=300}}
+    <div>
+      <p>{{model.firstName}} {{model.lastName}}</p>
+      <p>{{model.email}}</p>
+      <p>{{model.twitter}}</p>
+      <p>
+        {{!-- We don't need to specify the dynamic segment because we are 
+              already within the desired segment. If we were to link to 
+              `articles.new` from elsewhere, we would need to provide the 
+              `friend`. --}}
+        {{link-to 'Lend Article' 'articles.new'}}
+        {{link-to 'Edit Info' 'friends.edit' model}}
+        <a href="#" {{action "delete" model}}>Delete</a>
+      </p>
+    </div>
+  </div>
 </div>
 
 <div class="articles-container">
