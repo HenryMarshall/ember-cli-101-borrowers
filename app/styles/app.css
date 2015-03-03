@@ -14,3 +14,18 @@ table {
 .friend-profile > p > a {
   margin: 0 15px;
 }
+
+.friend-profile {
+  text-align: left;
+}
+
+.friend-profile img {
+  float: left;
+  margin: 1em 2em 1em 1em;
+}
+
+.friend-profile-linkds li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
