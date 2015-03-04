@@ -16,6 +16,7 @@ export default DS.Model.extend({
   email:          DS.attr('string'),
   twitter:        DS.attr('string'),
 
+  totalArticles:  DS.attr('number'),
   articles:       DS.hasMany('article'),
 
   // Values to be bound seem to be passed as the first args to `Ember.computed`
