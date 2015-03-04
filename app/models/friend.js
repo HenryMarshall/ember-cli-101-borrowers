@@ -29,4 +29,22 @@ export default DS.Model.extend({
     return this.get('firstName') + ' ' + this.get('lastName');
   }.property('firstName', 'lastName'),
 
+  fullNameOverloaded: function(key, value, oldValue) {
+    // I don't know why key or oldValue are args. Perhaps sometimes setter is
+    // called according to this convention. (This shuts up JSHint)
+    if (false) { console.log(key, oldValue); }
+
+    if (arguments.length === 1) {
+      // As getter
+      return this.get('firstName') + ' ' + this.get('lastName');
+    }
+    else {
+      // As setter
+      var name = value.split(' ');
+      this.set('firstName', name[0]);
+      this.set('lastName', name[1]);
+
+      return value;
+    }
+  }
 });
