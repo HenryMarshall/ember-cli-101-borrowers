@@ -19,12 +19,14 @@ export default DS.Model.extend({
   totalArticles:  DS.attr('number'),
   articles:       DS.hasMany('article'),
 
-  // Values to be bound seem to be passed as the first args to `Ember.computed`
-  // rather than as args to a chained `.property()` or `.observes()`. Is this a
-  // change for ember in general or because the guide is talking in the context
-  // of `Ember.Object.Extend`
-  //    http://emberjs.com/guides/object-model/observers/
   fullName: Ember.computed('firstName', 'lastName', function() {
     return this.get('firstName') + ' ' + this.get('lastName');
-  })
+  }),
+
+  // This alernative syntax requires prototype extensions, but is otherwise a
+  // matter of preference:
+  fullName2: function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }.property('firstName', 'lastName'),
+
 });
