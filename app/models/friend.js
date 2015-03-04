@@ -46,5 +46,12 @@ export default DS.Model.extend({
 
       return value;
     }
-  }
+  },
+
+  // The `changeGate` method is from an ember addon that functions like
+  // `computed`, but triggers only when the given key gets a new value (as
+  // opposed to any time it changes -- even if to itself).
+  capitalizedFirstName: changeGate('firstName', function(firstName) {
+    return Ember.String.capitalize(firstName);
+  })
 });
